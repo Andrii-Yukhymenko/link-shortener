@@ -1,11 +1,17 @@
 import React from "react";
-import './App.css';
-import Bank from "./features/bank/bank";
+import './App.module.scss';
+import LinkForm from "./features/LinkForm/LinkForm";
+import LinksList from "./features/LinksList/LinksList";
 
 function App() {
   return (
     <div className="App">
-      <Bank/>
+      <main>
+        <div>
+          <LinkForm />
+          <LinksList/>
+        </div>
+      </main>
     </div>
   );
 }

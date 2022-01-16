@@ -1,10 +1,10 @@
-import {configureStore, combineReducers} from "@reduxjs/toolkit";
-import bankSlice from "../features/bank/bankSlice";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import LinkFormSlice from "../features/LinkForm/LinkFormSlice";
+import LinksListSlice from "../features/LinksList/LinksListSlice";
 
 const rootReducer = combineReducers({
-  bank: bankSlice,
-})
+  linkForm: LinkFormSlice,
+  linksList: LinksListSlice,
+});
 
-export const store = configureStore({
-  reducer: rootReducer,
-})
+export const store = configureStore({ reducer: rootReducer });
