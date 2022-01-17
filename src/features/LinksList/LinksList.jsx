@@ -10,7 +10,7 @@ function LinksList() {
     <section>
       <ul>
         {shortedLinks.map((item) => {
-          return <ShortedLink key={item.link} link={item} />;
+          return <ShortedLink key={Date.now()} data={item} />;
         })}
       </ul>
     </section>

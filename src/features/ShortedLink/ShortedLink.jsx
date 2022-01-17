@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ShortedLink({link}) {
+function ShortedLink({data}) {
   return (
     <li>
-      {link}
+      {data.short_link}
     </li>
   );
 }

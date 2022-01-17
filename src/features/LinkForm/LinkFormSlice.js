@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 3,
+  tempInputValue: '',
 };
 
 const LinkFormSlice = createSlice({
   name: "LinkFormSlice",
   initialState,
   reducers: {
-    getCash: (state) => {
-      state.value = 4;
+    setTempInputValue: (state, action) => {
+      state.tempInputValue = action.payload;
     },
   },
 });
 
 export default LinkFormSlice.reducer;
-export const { getCash } = LinkFormSlice.actions;
+export const { setTempInputValue } = LinkFormSlice.actions;
