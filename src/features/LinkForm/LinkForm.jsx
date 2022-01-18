@@ -1,11 +1,21 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchLink, setTempInputValue } from "./LinkFormSlice";
+import {fetchLink, setError, setTempInputValue} from "./LinkFormSlice";
 
 function LinkForm() {
   const dispatch = useDispatch();
   const input = useSelector((state) => state.linkForm.tempInputValue);
   const error = useSelector((state) => state.linkForm.error);
+
+  const sendLink = (e) => {
+    e.preventDefault();
+    if (input) {
+      dispatch(fetchLink(input));
+    } else {
+      console.log("Ошибка");
+      dispatch(setError("Введите ссылку"))
+    }
+  };
   return (
     <section>
       <form>
@@ -18,15 +28,8 @@ function LinkForm() {
             value={input}
             type="url"
           />
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              dispatch(fetchLink(input));
-            }}
-          >
-            Short
-          </button>
-          {error ? (<p>Ошибка</p>) : (<p></p>)}
+          <button onClick={(e) => sendLink(e)}>Short</button>
+          {error ? <p>{error}</p> : <p></p>}
         </label>
       </form>
     </section>

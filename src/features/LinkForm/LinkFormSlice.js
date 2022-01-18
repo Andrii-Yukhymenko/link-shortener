@@ -3,7 +3,7 @@ import Service from "../../API/service";
 
 const initialState = {
   tempInputValue: "",
-  list: [],
+  shortedLinksList: [],
   error: "",
 };
 
@@ -22,27 +22,28 @@ const LinkFormSlice = createSlice({
       state.tempInputValue = action.payload;
     },
     removeShortedLink: (state, action) => {
-      state.list = state.list.filter((item) => item.id !== action.payload.id);
+      state.shortedLinksList = state.shortedLinksList.filter((item) => item.id !== action.payload.id);
+    },
+    setError: (state, action) => {
+      state.error = action.payload;
     },
   },
   extraReducers: {
     [fetchLink.pending]: (state, action) => {
-      console.log("Началась отправка");
-      state.error = ''
+      state.error = "";
     },
     // Action это то что возращает нам наш редюсер
     [fetchLink.fulfilled]: (state, action) => {
       state.tempInputValue = "";
       let mutated = { ...action.payload };
       mutated.id = Math.random();
-      state.list.push(mutated);
+      state.shortedLinksList.push(mutated);
     },
     [fetchLink.rejected]: (state, action) => {
-      console.log("Ошибка отправки");
-      state.error = action.error;
+      state.error = "Ошибка отправки";
     },
   },
 });
 
 export default LinkFormSlice.reducer;
-export const { setTempInputValue, removeShortedLink } = LinkFormSlice.actions;
+export const { setTempInputValue, removeShortedLink, setError } = LinkFormSlice.actions;

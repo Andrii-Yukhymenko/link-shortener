@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import ShortedLink from "../ShortedLink/ShortedLink";
 
 function LinksList() {
-  const shortedLinks = useSelector((state) => state.linkForm.list);
+  const shortedLinks = useSelector((state) => state.linkForm.shortedLinksList);
   const dispatch = useDispatch();
-  console.log(shortedLinks);
   return (
     <section>
       <ul>
