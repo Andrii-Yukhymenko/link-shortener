@@ -1,5 +1,4 @@
 import React from "react";
-import './App.module.scss';
 import LinkForm from "./features/LinkForm/LinkForm";
 import LinksList from "./features/LinksList/LinksList";
 
@@ -9,7 +8,7 @@ function App() {
       <main>
         <div>
           <LinkForm />
-          <LinksList/>
+          <LinksList />
         </div>
       </main>
     </div>
