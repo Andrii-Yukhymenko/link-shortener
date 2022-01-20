@@ -17,9 +17,12 @@
 }
 .originalLink {
   margin-right: 25px;
+  font-size: $m-text;
 }
 .shortLink {
   margin-right: 25px;
+  font-size: $m-text;
+  color: $green;
 }
 .button {
   color: $text-color;
@@ -30,6 +33,8 @@
 .copyButton {
   margin-right: 15px;
   background: $green;
+  font-size: $s-text;
+  font-weight: 700;
   &:hover {
     background: $light-green;
   }

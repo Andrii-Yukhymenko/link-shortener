@@ -1,8 +1,10 @@
 @import "~normalize-css-ultimate/normalize-ultimate.css";
-@import "src/style/variables";
+@import "fonts";
+@import "variables";
 
 body {
   background: $body-bg;
+  font-family: 'Poppins', sans-serif;
 }
 main {
   margin-top: 50px;

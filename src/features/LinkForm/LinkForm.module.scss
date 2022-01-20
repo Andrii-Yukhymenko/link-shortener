@@ -5,18 +5,19 @@
   padding: 30px 25px;
   margin: 0 auto;
   border-radius: $radii;
-  background-color: #3b3054;
+  background-color: $form-bg;
   position: relative;
   //background: url('./src/images/form-bg.svg');
 }
 .button {
   width: 30%;
-  padding: 20px;
+  padding: 17px;
   border-radius: $radii;
   cursor: pointer;
   color: $text-color;
   font-weight: 700;
   background: $green;
+  font-size: $s-text;
   &:hover {
     background: $light-green;
   }
@@ -27,6 +28,7 @@
   margin-right: 15px;
   padding: 15px;
   border-radius: $radii;
+  font-size: $l-text;
 }
 .wrapper{
   display: flex;
@@ -38,4 +40,5 @@
   position: absolute;
   bottom: 15px;
   left: 25px;
+  font-size: $s-text;
 }
