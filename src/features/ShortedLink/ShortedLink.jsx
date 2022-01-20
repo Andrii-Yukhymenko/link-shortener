@@ -15,8 +15,8 @@ function ShortedLink({ data }) {
     }, 1200);
   };
   const doLinkThumbnail = (original) => {
-    if (original.length >= 20) {
-      let thumbnail = [...original].slice(0, 20).join('') + "...";
+    if (original.length >= 22) {
+      let thumbnail = [...original].slice(0, 22).join('') + "...";
       return thumbnail;
     } else {
       return original;

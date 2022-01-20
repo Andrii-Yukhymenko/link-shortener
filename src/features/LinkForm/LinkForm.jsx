@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLink, setError, setTempInputValue } from "./LinkFormSlice";
 import classes from "./LinkForm.module.scss";
+import Loader from "../Loader/Loader";
 function LinkForm() {
   const dispatch = useDispatch();
   const input = useSelector((state) => state.linkForm.tempInputValue);
@@ -31,7 +32,7 @@ function LinkForm() {
             placeholder="Shorten a link here..."
           />
           <button className={classes.button} onClick={(e) => sendLink(e)}>
-            {loading ? "Loading..." : "Shorten it"}
+            {loading ? <Loader /> : "Shorten it"}
           </button>
           {error ? <p className={classes.error}>{error}</p> : <p></p>}
         </label>
