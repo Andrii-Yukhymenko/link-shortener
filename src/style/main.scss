@@ -1,1 +1,9 @@
-@import '~normalize-css-ultimate/normalize-ultimate.css';
+@import "~normalize-css-ultimate/normalize-ultimate.css";
+@import "src/style/variables";
+
+body {
+  background: $body-bg;
+}
+main {
+  margin-top: 50px;
+}

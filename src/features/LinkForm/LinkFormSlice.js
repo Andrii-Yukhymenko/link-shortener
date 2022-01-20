@@ -40,7 +40,7 @@ const LinkFormSlice = createSlice({
       state.shortedLinksList.push(mutated);
     },
     [fetchLink.rejected]: (state, action) => {
-      state.error = "Ошибка отправки";
+      state.error = "Enter correct link";
     },
   },
 });

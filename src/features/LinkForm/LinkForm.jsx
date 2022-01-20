@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {fetchLink, setError, setTempInputValue} from "./LinkFormSlice";
-
+import classes from './LinkForm.module.scss'
 function LinkForm() {
   const dispatch = useDispatch();
   const input = useSelector((state) => state.linkForm.tempInputValue);
@@ -12,24 +12,25 @@ function LinkForm() {
     if (input) {
       dispatch(fetchLink(input));
     } else {
-      console.log("Ошибка");
-      dispatch(setError("Введите ссылку"))
+      dispatch(setError("Enter link"))
     }
   };
   return (
     <section>
-      <form>
-        <label>
+      <form className={classes.form}>
+        <label className={classes.wrapper}>
           <input
+            className={classes.input}
             onChange={(e) => {
               dispatch(setTempInputValue(e.target.value));
             }}
             //TODO: Записать пример двойного связывания
             value={input}
             type="url"
+            placeholder='Shorten a link here...'
           />
-          <button onClick={(e) => sendLink(e)}>Short</button>
-          {error ? <p>{error}</p> : <p></p>}
+          <button className={classes.button} onClick={(e) => sendLink(e)}>Shorten it</button>
+          {error ? <p className={classes.error}>{error}</p> : <p></p>}
         </label>
       </form>
     </section>

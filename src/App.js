@@ -1,10 +1,11 @@
 import React from "react";
 import LinkForm from "./features/LinkForm/LinkForm";
 import LinksList from "./features/LinksList/LinksList";
+import classes from "./App.module.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div className={classes.container}>
       <main>
         <div>
           <LinkForm />

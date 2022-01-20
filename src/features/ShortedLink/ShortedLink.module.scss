@@ -1,0 +1,47 @@
+@import "src/style/variables";
+
+.item {
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+  border-radius: $radii;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.piece {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.originalLink {
+  margin-right: 25px;
+}
+.shortLink {
+  margin-right: 25px;
+}
+.button {
+  color: $text-color;
+  padding: 10px 15px;
+  border-radius: $radii;
+}
+
+.copyButton {
+  margin-right: 15px;
+  background: $green;
+  &:hover {
+    background: $light-green;
+  }
+}
+.deleteButton {
+  background: #3b3054;
+  margin-right: 25px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}

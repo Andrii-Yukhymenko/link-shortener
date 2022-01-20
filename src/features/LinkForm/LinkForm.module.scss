@@ -1,0 +1,41 @@
+@import "src/style/variables";
+
+.form {
+  max-width: 500px;
+  padding: 30px 25px;
+  margin: 0 auto;
+  border-radius: $radii;
+  background-color: #3b3054;
+  position: relative;
+  //background: url('./src/images/form-bg.svg');
+}
+.button {
+  width: 30%;
+  padding: 20px;
+  border-radius: $radii;
+  cursor: pointer;
+  color: $text-color;
+  font-weight: 700;
+  background: $green;
+  &:hover {
+    background: $light-green;
+  }
+}
+.input{
+  width: 70%;
+  height: 55px;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: $radii;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+}
+.error{
+  color: $error-color;
+  transform: translate(0, 50%);
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+}
