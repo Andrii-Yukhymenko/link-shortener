@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeShortedLink } from "../LinkForm/LinkFormSlice";
 import classes from "./ShortedLink.module.scss";
@@ -6,7 +6,15 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 
 function ShortedLink({ data }) {
   const dispatch = useDispatch();
-  const writeToClipboard = (data) => navigator.clipboard.writeText(data);
+  let [isCopied, setIsCopied] = useState(false);
+  const writeToClipboard = (data) => {
+    navigator.clipboard.writeText(data);
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1200);
+  };
+
   return (
     <li className={classes.item}>
       <div className={classes.piece}>
@@ -24,7 +32,9 @@ function ShortedLink({ data }) {
           className={`${classes.button} ${classes.copyButton}`}
           onClick={() => writeToClipboard(data.short_link)}
         >
-          Copy
+          {
+            isCopied ? ('Copied!') : ('Copy')
+          }
         </button>
       </div>
     </li>

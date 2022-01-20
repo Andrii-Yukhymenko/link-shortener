@@ -1,10 +1,9 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ShortedLink from "../ShortedLink/ShortedLink";
 
 function LinksList() {
   const shortedLinks = useSelector((state) => state.linkForm.shortedLinksList);
-  const dispatch = useDispatch();
   return (
     <section>
       <ul>

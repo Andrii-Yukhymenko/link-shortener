@@ -5,6 +5,7 @@ const initialState = {
   tempInputValue: "",
   shortedLinksList: [],
   error: "",
+  loading: false,
 };
 
 export const fetchLink = createAsyncThunk(
@@ -22,7 +23,9 @@ const LinkFormSlice = createSlice({
       state.tempInputValue = action.payload;
     },
     removeShortedLink: (state, action) => {
-      state.shortedLinksList = state.shortedLinksList.filter((item) => item.id !== action.payload.id);
+      state.shortedLinksList = state.shortedLinksList.filter(
+        (item) => item.id !== action.payload.id
+      );
     },
     setError: (state, action) => {
       state.error = action.payload;
@@ -31,6 +34,7 @@ const LinkFormSlice = createSlice({
   extraReducers: {
     [fetchLink.pending]: (state, action) => {
       state.error = "";
+      state.loading = true;
     },
     // Action это то что возращает нам наш редюсер
     [fetchLink.fulfilled]: (state, action) => {
@@ -38,12 +42,15 @@ const LinkFormSlice = createSlice({
       let mutated = { ...action.payload };
       mutated.id = Math.random();
       state.shortedLinksList.push(mutated);
+      state.loading = false;
     },
     [fetchLink.rejected]: (state, action) => {
       state.error = "Enter correct link";
+      state.loading = false;
     },
   },
 });
 
 export default LinkFormSlice.reducer;
-export const { setTempInputValue, removeShortedLink, setError } = LinkFormSlice.actions;
+export const { setTempInputValue, removeShortedLink, setError } =
+  LinkFormSlice.actions;
