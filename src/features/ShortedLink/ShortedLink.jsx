@@ -14,6 +14,14 @@ function ShortedLink({ data }) {
       setIsCopied(false);
     }, 1200);
   };
+  const doLinkThumbnail = (original) => {
+    if (original.length >= 20) {
+      let thumbnail = [...original].slice(0, 20).join('') + "...";
+      return thumbnail;
+    } else {
+      return original;
+    }
+  };
 
   return (
     <li className={classes.item}>
@@ -24,7 +32,9 @@ function ShortedLink({ data }) {
         >
           <IoCloseCircleOutline style={{ fontSize: "20px" }} />
         </button>
-        <div className={classes.originalLink}>{data.original_link}</div>
+        <div className={classes.originalLink}>
+          {doLinkThumbnail(data.original_link)}
+        </div>
       </div>
       <div className={classes.piece}>
         <div className={classes.shortLink}>{data.short_link}</div>
@@ -32,9 +42,7 @@ function ShortedLink({ data }) {
           className={`${classes.button} ${classes.copyButton}`}
           onClick={() => writeToClipboard(data.short_link)}
         >
-          {
-            isCopied ? ('Copied!') : ('Copy')
-          }
+          {isCopied ? "Copied!" : "Copy"}
         </button>
       </div>
     </li>
