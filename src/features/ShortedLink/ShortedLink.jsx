@@ -16,7 +16,7 @@ function ShortedLink({ data }) {
   };
   const doLinkThumbnail = (original) => {
     if (original.length >= 22) {
-      let thumbnail = [...original].slice(0, 22).join('') + "...";
+      let thumbnail = [...original].slice(0, 22).join("") + "...";
       return thumbnail;
     } else {
       return original;
@@ -32,7 +32,7 @@ function ShortedLink({ data }) {
         >
           <IoCloseCircleOutline style={{ fontSize: "20px" }} />
         </button>
-        <div className={classes.originalLink}>
+        <div title={data.original_link} className={classes.originalLink}>
           {doLinkThumbnail(data.original_link)}
         </div>
       </div>
