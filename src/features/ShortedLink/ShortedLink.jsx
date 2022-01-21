@@ -25,26 +25,24 @@ function ShortedLink({ data }) {
 
   return (
     <li className={classes.item}>
-      <div className={classes.piece}>
-        <button
-          className={`${classes.button} ${classes.deleteButton}`}
-          onClick={() => dispatch(removeShortedLink(data))}
-        >
-          <IoCloseCircleOutline style={{ fontSize: "20px" }} />
-        </button>
+      <button
+        className={`${classes.button} ${classes.deleteButton}`}
+        onClick={() => dispatch(removeShortedLink(data))}
+      >
+        <IoCloseCircleOutline style={{ fontSize: "20px" }} />
+      </button>
+      <div className={classes.links}>
         <div title={data.original_link} className={classes.originalLink}>
           {doLinkThumbnail(data.original_link)}
         </div>
-      </div>
-      <div className={classes.piece}>
         <div className={classes.shortLink}>{data.short_link}</div>
-        <button
-          className={`${classes.button} ${classes.copyButton}`}
-          onClick={() => writeToClipboard(data.short_link)}
-        >
-          {isCopied ? "Copied!" : "Copy"}
-        </button>
       </div>
+      <button
+        className={`${classes.button} ${classes.copyButton}`}
+        onClick={() => writeToClipboard(data.short_link)}
+      >
+        {isCopied ? "Copied!" : "Copy"}
+      </button>
     </li>
   );
 }
