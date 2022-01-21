@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeShortedLink } from "../LinkForm/LinkFormSlice";
 import classes from "./ShortedLink.module.scss";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { HiX } from "react-icons/hi";
 
 function ShortedLink({ data }) {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function ShortedLink({ data }) {
         className={`${classes.button} ${classes.deleteButton}`}
         onClick={() => dispatch(removeShortedLink(data))}
       >
-        <IoCloseCircleOutline style={{ fontSize: "20px" }} />
+        <HiX style={{ fontSize: "20px" }} />
       </button>
       <div className={classes.links}>
         <div title={data.original_link} className={classes.originalLink}>
