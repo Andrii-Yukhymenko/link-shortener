@@ -24,20 +24,31 @@
   &:hover {
     background: $light-green;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
-.input{
+.input {
   width: 70%;
   height: 55px;
   margin-right: 15px;
   padding: 15px;
   border-radius: $radii;
   font-size: $l-text;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
 }
-.wrapper{
+.wrapper {
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
-.error{
+.error {
   color: $error-color;
   transform: translate(0, 50%);
   position: absolute;
