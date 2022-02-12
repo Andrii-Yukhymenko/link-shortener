@@ -5,7 +5,7 @@
 
 Дата начала работы: 15.01.2022
 
-[Ссылка на этот сайт в моем портфолио](https://link-shortener.andrii-yukhymenko.me/)
+[Ссылка на это приложение в моем портфолио](https://link-shortener.andrii-yukhymenko.me/)
 
 ### Использованные технологии:
 - Create react app
